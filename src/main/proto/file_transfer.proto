@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.kaiv.grpc;
+
+service FileTransferService {
+  rpc UploadFile(stream FileChunk) returns (UploadStatus);
+}
+
+message FileChunk {
+  bytes data = 1;
+  string filename = 2;
+}
+
+message UploadStatus {
+  string message = 1;
+}
