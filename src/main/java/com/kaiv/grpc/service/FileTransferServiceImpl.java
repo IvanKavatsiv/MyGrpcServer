@@ -46,7 +46,7 @@ public class FileTransferServiceImpl extends FileTransferServiceGrpc.FileTransfe
                     if (outputStream != null) {
                         outputStream.close();
                     }
-                    responseObserver.onNext(FileTransfer.UploadStatus.newBuilder().setMessage("Server: download file successful: " + filename).build());
+                    responseObserver.onNext(FileTransfer.UploadStatus.newBuilder().setMessage("download file successful: " + filename).build());
                     responseObserver.onCompleted();
                 } catch (IOException e) {
                     responseObserver.onError(e);
